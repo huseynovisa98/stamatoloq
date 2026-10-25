@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="az" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stomatoloq.az - Müasir Stomatoloji Portal və Klinika Şəbəkəsi</title>
+  <meta name="description" content="Azərbaycanın qabaqcıl stomatoloji portalı və klinika şəbəkəsi. İmplantologiya, ortodontiya, estetik stomatologiya, onlayn qəbul və interaktiv qiymət kalkulyatoru.">
+  <meta property="og:title" content="Stomatoloq.az - Gülüşünüz Bizim Dəyərimizdir">
+  <meta property="og:description" content="Ağrısız müalicə, İsveçrə implantları, 3D KT kompüter diaqnostikası və peşəkar həkim heyəti ilə xidmətinizdəyik.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9', // Medical cyan
+              600: '#0284c7', // Primary dental blue
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            navy: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            },
+            emerald: {
+              500: '#10b981',
+              600: '#059669',
+            }
+          },
+          boxShadow: {
+            'card': '0 10px 30px -5px rgba(2, 132, 199, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+            'glow': '0 0 25px rgba(14, 165, 233, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar & Enhancements */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Before-After Slider Container */
+    .ba-slider {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+    .ba-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .ba-resize {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50%;
+      overflow: hidden;
+    }
+    .ba-handle {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #ffffff;
+      transform: translateX(-50%);
+      cursor: ew-resize;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .ba-handle-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #0284c7;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+      border: 3px solid #ffffff;
+    }
+
+    /* Glassmorphism */
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-700 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- ==================== 1. TOP EMERGENCY & INFO BAR ==================== -->
+  <header class="bg-navy-900 text-slate-300 text-xs py-2 px-4 border-b border-navy-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <!-- Left: 24/7 Hotline & Hours -->
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+        <a href="tel:*0303" class="flex items-center gap-1.5 text-white hover:text-brand-300 font-semibold transition-colors">
+          <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+          <i class="fa-solid fa-phone-volume text-brand-400"></i>
+          <span>*0303 (24/7 Təcili Stomatoloji Yardım)</span>
+        </a>
+        <div class="hidden sm:flex items-center gap-1 text-slate-400">
+          <i class="fa-regular fa-clock text-brand-400"></i>
+          <span>B.e - Şənbə: 09:00 - 21:00 | Bazar: Təcili rejim</span>
+        </div>
+        <div class="hidden lg:flex items-center gap-1 text-slate-400">
+          <i class="fa-solid fa-location-dot text-brand-400"></i>
+          <span>Bakı şəh., 4 müasir filial</span>
+        </div>
+      </div>
+
+      <!-- Right: Socials & Language -->
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 text-slate-400">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" class="hover:text-pink-400 transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com" target="_blank" rel="noreferrer" class="hover:text-blue-400 transition" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://wa.me/994502220303" target="_blank" rel="noreferrer" class="hover:text-emerald-400 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp text-sm"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noreferrer" class="hover:text-red-400 transition" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <span class="text-slate-600">|</span>
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-navy-800 rounded-lg p-0.5 border border-navy-700">
+          <button onclick="changeLanguage('AZ')" class="px-2 py-0.5 text-[11px] font-bold rounded text-white bg-brand-600 transition" id="lang-az">AZ</button>
+          <button onclick="changeLanguage('RU')" class="px-2 py-0.5 text-[11px] font-medium text-slate-400 hover:text-white transition" id="lang-ru">RU</button>
+          <button onclick="changeLanguage('EN')" class="px-2 py-0.5 text-[11px] font-medium text-slate-400 hover:text-white transition" id="lang-en">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 2. MAIN NAVIGATION ==================== -->
+  <nav class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 transition-all duration-300" id="main-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 to-brand-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+            <i class="fa-solid fa-tooth text-2xl"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-2xl font-extrabold tracking-tight text-navy-900">Stomatoloq<span class="text-brand-600">.az</span></span>
+              <span class="bg-brand-50 text-brand-700 text-[10px] font-bold px-1.5 py-0.5 rounded border border-brand-200 uppercase">Portal</span>
+            </div>
+            <p class="text-[11px] text-slate-500 font-medium tracking-wide">Gülüşünüz Bizim Dəyərimizdir</p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu Links -->
+        <div class="hidden xl:flex items-center gap-7 text-sm font-semibold text-slate-600">
+          <a href="#haqqimizda" class="hover:text-brand-600 transition-colors">Haqqımızda</a>
+          <a href="#xidmetler" class="hover:text-brand-600 transition-colors flex items-center gap-1">
+            Xidmətlər
+            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+          </a>
+          <a href="#hekimler" class="hover:text-brand-600 transition-colors">Həkimlərimiz</a>
+          <a href="#kalkulyator" class="hover:text-brand-600 transition-colors flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Qiymət Kalkulyatoru
+          </a>
+          <a href="#netice" class="hover:text-brand-600 transition-colors">Əvvəl / Sonra</a>
+          <a href="#kampaniyalar" class="hover:text-brand-600 transition-colors">Kampaniyalar</a>
+          <a href="#klinikalar" class="hover:text-brand-600 transition-colors">Filiallar</a>
+          <a href="#elaqe" class="hover:text-brand-600 transition-colors">Əlaqə</a>
+        </div>
+
+        <!-- Right Action Buttons -->
+        <div class="hidden md:flex items-center gap-3">
+          <a href="tel:+994125550303" class="flex items-center gap-2 px-3 py-2 text-xs font-bold text-navy-900 bg-slate-100 hover:bg-slate-200 rounded-xl transition">
+            <i class="fa-solid fa-phone text-brand-600"></i>
+            <span>(012) 555-03-03</span>
+          </a>
+          <button onclick="openBookingModal()" class="flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-700 hover:to-brand-600 shadow-md shadow-brand-500/25 hover:shadow-lg transition-all duration-200">
+            <i class="fa-solid fa-calendar-check text-xs"></i>
+            <span>Onlayn Qəbul</span>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="flex xl:hidden items-center gap-2">
+          <button onclick="openBookingModal()" class="md:hidden px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-brand-600">
+            Qəbul
+          </button>
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none transition">
+            <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-xl">
+      <a href="#haqqimizda" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-600">Haqqımızda</a>
+      <a href="#xidmetler" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-600">Xidmətlər</a>
+      <a href="#hekimler" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-600">Həkimlərimiz</a>
+      <a href="#kalkulyator" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-600">Qiymət Kalkulyatoru</a>
+      <a href="#netice" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-600">Əvvəl / Sonra Nəticələr</a>
+      <a href="#kampaniyalar" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-600">Kampaniyalar və Endirimlər</a>
+      <a href="#klinikalar" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-600">Filiallar və Xəritə</a>
+      <a href="#elaqe" onclick="toggleMobileMenu()" class="block py-2 text-sm font-semibold text-slate-700 hover:text-brand-600">Əlaqə</a>
+      <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+        <a href="tel:+994502220303" class="w-full text-center py-2.5 rounded-xl bg-slate-100 font-bold text-xs text-navy-900">
+          <i class="fa-solid fa-phone text-brand-600 mr-2"></i>+994 (50) 222-03-03
+        </a>
+        <button onclick="toggleMobileMenu(); openBookingModal()" class="w-full py-3 rounded-xl bg-brand-600 text-white font-bold text-sm shadow-md">
+          Onlayn Qəbula Yazılın
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== 3. HERO SECTION & SMART WIDGET ==================== -->
+  <section class="relative bg-gradient-to-b from-brand-50/70 via-white to-white pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden">
+    <!-- Subtle Background Elements -->
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-200/30 blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-0 -ml-20 w-80 h-80 rounded-full bg-emerald-200/20 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text & Badges -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-brand-200 text-brand-700 text-xs font-bold shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+            <span>Rəsmi Sertifikatlaşdırılmış Stomatoloji Şəbəkə</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-navy-900 tracking-tight leading-[1.18]">
+            Müasir Texnologiyalarla <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-cyan-500">Ağrısız və Mükəmməl</span> Gülüşünüzü Bərpa Edin
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl">
+            İsveçrə və Almaniya istehsalı implantlar, 3D KT kompüter tomoqrafiyası, mikroskop altında endodontiya və peşəkar ortodontiya. İlk konsultasiya və müayinə planı tamamilə pulsuzdur.
+          </p>
+
+          <!-- Key Metrics -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2 pb-2">
+            <div class="bg-white/80 p-3.5 rounded-2xl border border-slate-100 shadow-sm">
+              <div class="text-2xl font-extrabold text-navy-900">15+ İl</div>
+              <div class="text-xs text-slate-500 mt-0.5">Klinik Təcrübə</div>
+            </div>
+            <div class="bg-white/80 p-3.5 rounded-2xl border border-slate-100 shadow-sm">
+              <div class="text-2xl font-extrabold text-brand-600">45,000+</div>
+              <div class="text-xs text-slate-500 mt-0.5">Məmnun Pasient</div>
+            </div>
+            <div class="bg-white/80 p-3.5 rounded-2xl border border-slate-100 shadow-sm">
+              <div class="text-2xl font-extrabold text-navy-900">4 Filial</div>
+              <div class="text-xs text-slate-500 mt-0.5">Bakı Mərkəzi</div>
+            </div>
+            <div class="bg-white/80 p-3.5 rounded-2xl border border-slate-100 shadow-sm">
+              <div class="text-2xl font-extrabold text-emerald-600">99.8%</div>
+              <div class="text-xs text-slate-500 mt-0.5">Uğurlu Əməliyyat</div>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="openBookingModal()" class="px-6 py-3.5 rounded-xl font-bold text-sm text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-500/30 hover:scale-[1.02] transition-all duration-150 flex items-center gap-2">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Həkim Qəbuluna Yazıl</span>
+            </button>
+            <a href="#kalkulyator" class="px-6 py-3.5 rounded-xl font-bold text-sm text-slate-700 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm hover:border-slate-300 transition-all flex items-center gap-2">
+              <i class="fa-solid fa-calculator text-brand-500"></i>
+              <span>Qiyməti Hesabla</span>
+            </a>
+            <a href="https://wa.me/994502220303?text=Salam,%20stomatoloq.az%20saytından%20yazıram." target="_blank" rel="noreferrer" class="p-3.5 rounded-xl text-emerald-600 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition" title="WhatsApp ilə əlaqə">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Image & Floating Badges -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Main Hero Image -->
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80" alt="Müasir Stomatoloji Klinika və Diş Həkimi" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent"></div>
+              
+              <!-- Bottom overlay badge -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-white/50">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-lg">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-navy-900">Ömürlük İmplant Zəmanəti</h4>
+                    <p class="text-[11px] text-slate-500">Straumann (İsveçrə) & Bego (Almaniya) pasportu ilə</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Doctor Badge -->
+            <div class="absolute -top-4 -left-6 bg-white p-3.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+              <div class="flex -space-x-2">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80" alt="Həkim">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80" alt="Həkim">
+                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://images.unsplash.com/photo-1594824813590-b99f8c65853b?auto=format&fit=crop&w=200&q=80" alt="Həkim">
+              </div>
+              <div class="text-xs">
+                <div class="font-bold text-navy-900">28+ Peşəkar Həkim</div>
+                <div class="text-slate-500 flex items-center gap-1">
+                  <span class="text-amber-400">★★★★★</span> (4.9/5)
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating 3D Scanner Badge -->
+            <div class="absolute -bottom-5 -right-5 bg-navy-900 text-white p-3.5 rounded-2xl shadow-xl border border-navy-800 hidden sm:flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-sm">
+                <i class="fa-solid fa-cube"></i>
+              </div>
+              <div class="text-xs">
+                <div class="font-bold">3D Kompüter KT</div>
+                <div class="text-slate-400 text-[11px]">Rəqəmsal dəqiqlik</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==================== SMART HERO SEARCH & BOOKING BAR ==================== -->
+      <div class="mt-12 bg-white rounded-3xl p-4 sm:p-6 shadow-card border border-slate-200">
+        <form id="hero-quick-form" onsubmit="handleHeroQuickSubmit(event)" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <!-- Select Service -->
+          <div>
+            <label class="block text-xs font-bold text-slate-500 mb-1.5 uppercase tracking-wider">Xidmət Seçin</label>
+            <div class="relative">
+              <i class="fa-solid fa-tooth absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+              <select id="quick-service" class="w-full pl-10 pr-4 py-3 bg-slate-50 hover:bg-slate-100/80 rounded-xl border border-slate-200 text-slate-800 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition cursor-pointer">
+                <option value="implant">İmplantologiya (Diş İmplantı)</option>
+                <option value="ortodont">Ortodontiya (Breketlər & Kapalar)</option>
+                <option value="vinir">Keramik Vinir & Hollivud Gülüşü</option>
+                <option value="agardilma">Lazerlə Diş Ağardılması</option>
+                <option value="terapiya">Terapiya & Karies Müalicəsi</option>
+                <option value="usaq">Uşaq Stomatologiyası</option>
+                <option value="cerrahiyye">Cərrahiyyə & 3D Diaqnostika</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Select Clinic Branch -->
+          <div>
+            <label class="block text-xs font-bold text-slate-500 mb-1.5 uppercase tracking-wider">Filial Seçin</label>
+            <div class="relative">
+              <i class="fa-solid fa-hospital absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+              <select id="quick-branch" class="w-full pl-10 pr-4 py-3 bg-slate-50 hover:bg-slate-100/80 rounded-xl border border-slate-200 text-slate-800 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition cursor-pointer">
+                <option value="nasimi">Mərkəzi Filial (Nəsimi r-nu)</option>
+                <option value="genclik">Gənclik VIP Mərkəzi (Atatürk pr.)</option>
+                <option value="yasamal">Yasamal Filialı (H. Zərdabi)</option>
+                <option value="xetai">Xətai Filialı (Xocalı pr.)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Select Date -->
+          <div>
+            <label class="block text-xs font-bold text-slate-500 mb-1.5 uppercase tracking-wider">Tarix</label>
+            <div class="relative">
+              <i class="fa-regular fa-calendar absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+              <input type="date" id="quick-date" class="w-full pl-10 pr-4 py-3 bg-slate-50 hover:bg-slate-100/80 rounded-xl border border-slate-200 text-slate-800 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition cursor-pointer">
+            </div>
+          </div>
+
+          <!-- Quick Submit Button -->
+          <div class="flex items-end">
+            <button type="submit" class="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-500/20 hover:shadow-lg transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Qəbula Yazıl</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 4. CORE SERVICES SHOWCASE ==================== -->
+  <section id="xidmetler" class="py-20 bg-slate-50/70 border-t border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">İxtisaslaşmış Şöbələrimiz</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 tracking-tight">Hərtərəfli Stomatoloji Xidmətlər</h2>
+        <p class="text-slate-600 text-base mt-3">Beynəlxalq standartlara uyğun avadanlıqlar və ağrısız anesteziya metodları ilə bütün ailənizin təbəssümünə qayğı göstəririk.</p>
+      </div>
+
+      <!-- Services Category Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <button onclick="filterServices('all')" class="service-pill-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-brand-600 text-white shadow-sm" data-category="all">Hamısı (6)</button>
+        <button onclick="filterServices('implant')" class="service-pill-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="implant">İmplant & Cərrahiyyə</button>
+        <button onclick="filterServices('estetika')" class="service-pill-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="estetika">Estetika & Vinir</button>
+        <button onclick="filterServices('ortodont')" class="service-pill-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="ortodont">Ortodontiya & Breket</button>
+        <button onclick="filterServices('usaq')" class="service-pill-btn px-4 py-2 rounded-xl text-xs font-bold transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-category="usaq">Uşaq Stomatologiyası</button>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+        
+        <!-- Service 1: Implantologiya -->
+        <div class="service-card group bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200" data-category="implant">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 bg-slate-100">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=700&q=80" alt="Diş İmplantı" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-3 left-3 bg-brand-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">Ömürlük Zəmanət</span>
+          </div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-400">450 AZN-dən</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors">İmplantologiya və Sümük Əkilməsi</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            İsveçrə (Straumann), Almaniya (Bego) və Koreya (Osstem) sistemləri. Çənə sümüyü itirilmiş hallarda sinus-liftinq və sümük artırılması.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-600"><i class="fa-solid fa-circle-check mr-1"></i>3D Rəqəmsal Planlama</span>
+            <button onclick="prefillBooking('İmplantologiya', '')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+              Yazılmaq <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 2: Ortodontiya -->
+        <div class="service-card group bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200" data-category="ortodont">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 bg-slate-100">
+            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=700&q=80" alt="Ortodontiya Breketlər" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">Şəffaf Kapalar / Breketlər</span>
+          </div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-teeth"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-400">400 AZN-dən</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors">Ortodontiya (Breketlər & Kapalar)</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            Damon keramik və metal breketlər, habelə görünməyən şəffaf alignerlər (Invisalign) ilə diş əyriliklərinin və çənə qapanışının düzəldilməsi.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-indigo-600"><i class="fa-solid fa-circle-check mr-1"></i>Hissə-hissə ödəniş</span>
+            <button onclick="prefillBooking('Ortodontiya (Breketlər)', '')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+              Yazılmaq <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 3: Estetik Vinirlər -->
+        <div class="service-card group bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200" data-category="estetika">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 bg-slate-100">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=700&q=80" alt="Hollivud Gülüşü Vinirlər" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">Hollivud Gülüşü</span>
+          </div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-400">220 AZN / diş</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors">Keramik Vinirlər & Zirkon</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            Ultra-incə E-max keramik laminatlar, rəngini heç vaxt itirməyən təbii estetik qat və zirkon taclar ilə qüsursuz simmetrik təbəssüm.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-emerald-600"><i class="fa-solid fa-circle-check mr-1"></i>0.3mm minimal yonulma</span>
+            <button onclick="prefillBooking('Keramik Vinirlər', '')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+              Yazılmaq <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 4: Diş Ağardılması -->
+        <div class="service-card group bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200" data-category="estetika">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 bg-slate-100">
+            <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=700&q=80" alt="Lazerlə Diş Ağardılması" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-3 left-3 bg-cyan-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">Zoom 4 Texnologiyası</span>
+          </div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-sun"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-400">180 AZN</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors">Lazerlə Peşəkar Ağardılma</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            Philips Zoom 4 WhiteSpeed ilə cəmi 45 dəqiqədə diş minasına zərər vermədən 6-8 ton ağarma effekti və emal möhkəmləndirici flüorlaşdırma.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-cyan-600"><i class="fa-solid fa-circle-check mr-1"></i>Həssaslıq yaratmır</span>
+            <button onclick="prefillBooking('Diş Ağardılması (Zoom 4)', '')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+              Yazılmaq <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 5: Uşaq Stomatologiyası -->
+        <div class="service-card group bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200" data-category="usaq">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 bg-slate-100">
+            <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=700&q=80" alt="Uşaq Stomatologiyası" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-3 left-3 bg-amber-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">Qorxusuz və Əyləncəli</span>
+          </div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-child-reaching"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-400">35 AZN-dən</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors">Uşaq Stomatologiyası (Pediatrik)</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            Psixoloji hazırlıq, cizgi filmli qulaqlıqlar və iynəsiz anesteziya ilə süd dişlərinin müalicəsi, karies profilaktikası və fissur hermetizasiyası.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-amber-600"><i class="fa-solid fa-circle-check mr-1"></i>Hədiyyə diplomu</span>
+            <button onclick="prefillBooking('Uşaq Stomatologiyası', '')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+              Yazılmaq <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Service 6: 3D KT & Cərrahiyyə -->
+        <div class="service-card group bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200" data-category="implant">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/10] mb-5 bg-slate-100">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=700&q=80" alt="3D Kompüter Diaqnostikası" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-3 left-3 bg-purple-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">Dəqiq Diaqnostika</span>
+          </div>
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-x-ray"></i>
+            </div>
+            <span class="text-xs font-bold text-slate-400">40 AZN</span>
+          </div>
+          <h3 class="text-lg font-bold text-navy-900 group-hover:text-brand-600 transition-colors">3D KT & Çənə Cərrahiyyəsi</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2 leading-relaxed">
+            Minimal şüalanma ilə çənənin 3D rəqəmsal tomoqrafiyası, qömülü ağıl dişlərinin ultrasəs piezo-cərrahiyyə ilə travmasız və ağrısız çıxarılması.
+          </p>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-purple-600"><i class="fa-solid fa-circle-check mr-1"></i>Piezo ultrasonik bıçaq</span>
+            <button onclick="prefillBooking('Cərrahiyyə və 3D KT', '')" class="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+              Yazılmaq <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 5. BEFORE & AFTER TRANSFORMATION SHOWCASE ==================== -->
+  <section id="netice" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left details -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Real Nəticələrimiz</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight leading-snug">
+            Təbəssümlərin Heyrətamiz <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-emerald-500">Dəyişim Hekayələri</span>
+          </h2>
+          <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+            Xəstələrimizin klinikamıza müraciət etməzdən əvvəlki və müalicə tamamlandıqdan sonrakı vizual fərqini interaktiv sürüşdürücü ilə özünüz müqayisə edin.
+          </p>
+
+          <!-- Transformation Case Selector Buttons -->
+          <div class="space-y-3 pt-2">
+            <button onclick="switchTransformationCase(1)" id="case-btn-1" class="case-btn w-full text-left p-4 rounded-2xl border-2 border-brand-600 bg-brand-50/60 transition flex items-center justify-between">
+              <div>
+                <h4 class="font-bold text-sm text-navy-900">1. E-Max Keramik Vinirlər (8 Diş)</h4>
+                <p class="text-xs text-slate-500 mt-0.5">Rəng korreksiyası, forma simmetriyası və diastemanın bağlanması</p>
+              </div>
+              <span class="text-xs font-bold text-brand-600 bg-white px-2.5 py-1 rounded-lg border border-brand-200">Aktiv</span>
+            </button>
+
+            <button onclick="switchTransformationCase(2)" id="case-btn-2" class="case-btn w-full text-left p-4 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 transition flex items-center justify-between">
+              <div>
+                <h4 class="font-bold text-sm text-navy-900">2. Damon Keramika Breket Müalicəsi</h4>
+                <p class="text-xs text-slate-500 mt-0.5">14 aylıq ortodontik müalicə, çənə sıxlığının aradan qaldırılması</p>
+              </div>
+              <span class="text-xs font-medium text-slate-400">Bax</span>
+            </button>
+
+            <button onclick="switchTransformationCase(3)" id="case-btn-3" class="case-btn w-full text-left p-4 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 transition flex items-center justify-between">
+              <div>
+                <h4 class="font-bold text-sm text-navy-900">3. Ön Diş İmplantı və Zirkon Tac</h4>
+                <p class="text-xs text-slate-500 mt-0.5">Travma nəticəsində itirilmiş mərkəzi kəsici dişin dərhal bərpası</p>
+              </div>
+              <span class="text-xs font-medium text-slate-400">Bax</span>
+            </button>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="prefillBooking('Estetik Məsləhət', '')" class="px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-navy-900 hover:bg-brand-600 transition-colors shadow-md">
+              Mənim Üçün Gülüş Planı Hazırlayın
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Before/After Comparison Widget -->
+        <div class="lg:col-span-7">
+          <div class="bg-slate-900 p-2 sm:p-4 rounded-3xl shadow-2xl">
+            
+            <div class="relative ba-slider rounded-2xl aspect-[4/3] sm:aspect-[16/10] overflow-hidden" id="ba-container">
+              <!-- After Image (Full background) -->
+              <img id="ba-img-after" src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80" alt="Sonra - Müalicədən sonra">
+              <span class="absolute top-4 right-4 bg-emerald-500 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-md z-10">SONRA</span>
+
+              <!-- Before Image (Clipped resize div) -->
+              <div class="ba-resize" id="ba-resize">
+                <img id="ba-img-before" src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=80" alt="Əvvəl - Müalicədən əvvəl" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="absolute top-4 left-4 bg-slate-900/80 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-md z-10">ƏVVƏL</span>
+              </div>
+
+              <!-- Draggable Divider Handle -->
+              <div class="ba-handle" id="ba-handle">
+                <div class="ba-handle-button">
+                  <i class="fa-solid fa-arrows-left-right text-sm"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slider Instruction -->
+            <div class="text-center mt-3 text-xs text-slate-400 flex items-center justify-center gap-2">
+              <i class="fa-solid fa-hand-pointer text-brand-400"></i>
+              <span>Fərqi görmək üçün xətti sağa və sola sürüşdürün</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 6. INTERACTIVE COST CALCULATOR ==================== -->
+  <section id="kalkulyator" class="py-20 bg-gradient-to-b from-slate-50 to-brand-50/40 border-t border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-emerald-600 font-bold text-xs uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Şəffaf və Əlçatan</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 tracking-tight">İnteraktiv Müalicə Qiymət Kalkulyatoru</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">Gizli ödəniş yoxdur. Ehtiyacınız olan proseduru seçin, təxmini büdcənizi və Birkart / Tamkart ilə 12-24 aylıq faizsiz taksitini dərhal hesablayın.</p>
+      </div>
+
+      <div class="bg-white rounded-3xl shadow-card border border-slate-200/90 p-6 sm:p-10 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <!-- Left: Selection options -->
+          <div class="md:col-span-7 space-y-6">
+            
+            <!-- Step 1: Select Procedure -->
+            <div>
+              <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">1. Əsas Prosedur Növü</label>
+              <div class="grid grid-cols-2 gap-2 sm:gap-3">
+                <button type="button" onclick="selectCalcTreatment('implant', 490)" class="calc-type-btn active p-3 rounded-xl border-2 border-brand-600 bg-brand-50/50 text-left transition" data-type="implant">
+                  <div class="font-bold text-sm text-navy-900">İmplant (Bərpa)</div>
+                  <div class="text-[11px] text-brand-600 font-semibold mt-0.5">490 AZN-dən</div>
+                </button>
+                <button type="button" onclick="selectCalcTreatment('vinir', 240)" class="calc-type-btn p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left transition" data-type="vinir">
+                  <div class="font-bold text-sm text-navy-900">E-max Vinir</div>
+                  <div class="text-[11px] text-slate-500 font-semibold mt-0.5">240 AZN / diş</div>
+                </button>
+                <button type="button" onclick="selectCalcTreatment('breket', 600)" class="calc-type-btn p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left transition" data-type="breket">
+                  <div class="font-bold text-sm text-navy-900">Keramik Breket</div>
+                  <div class="text-[11px] text-slate-500 font-semibold mt-0.5">600 AZN / çənə</div>
+                </button>
+                <button type="button" onclick="selectCalcTreatment('agartma', 180)" class="calc-type-btn p-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-left transition" data-type="agartma">
+                  <div class="font-bold text-sm text-navy-900">Zoom 4 Ağartma</div>
+                  <div class="text-[11px] text-slate-500 font-semibold mt-0.5">180 AZN (tam)</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Quantity / Scope Slider -->
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <label class="text-xs font-bold text-navy-900 uppercase tracking-wider">2. Diş və ya Vahid Sayı</label>
+                <span class="text-sm font-extrabold text-brand-600 bg-brand-50 px-2.5 py-0.5 rounded-lg border border-brand-200" id="calc-count-display">1 Ədəd</span>
+              </div>
+              <input type="range" id="calc-slider" min="1" max="16" value="1" oninput="updateCalcQuantity(this.value)" class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600">
+              <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-medium">
+                <span>1 ədəd</span>
+                <span>4 ədəd</span>
+                <span>8 (Gülüş xətti)</span>
+                <span>16 (Tam çənə)</span>
+              </div>
+            </div>
+
+            <!-- Step 3: Add-on Checkboxes -->
+            <div class="space-y-2">
+              <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">3. Əlavə Xidmətlər & Diaqnostika</label>
+              
+              <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100/70 border border-slate-200 cursor-pointer transition">
+                <input type="checkbox" id="addon-tomography" onchange="recalculateTotal()" class="w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+                <div class="text-xs">
+                  <span class="font-bold text-navy-900">3D Kompüter Tomoqrafiyası (KT)</span>
+                  <span class="text-slate-500 block">Kompüter 3D skaner və çənə diaqnostikası (+40 AZN)</span>
+                </div>
+              </label>
+
+              <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100/70 border border-slate-200 cursor-pointer transition">
+                <input type="checkbox" id="addon-cleaning" checked onchange="recalculateTotal()" class="w-4 h-4 text-brand-600 rounded border-slate-300 focus:ring-brand-500">
+                <div class="text-xs">
+                  <span class="font-bold text-navy-900">Ultrasəs Gigiyenik Təmizləmə & Air-Flow</span>
+                  <span class="text-slate-500 block">Ərplərin və daşların tam təmizlənməsi (+50 AZN)</span>
+                </div>
+              </label>
+            </div>
+
+          </div>
+
+          <!-- Right: Summary Card & Taksit Calculator -->
+          <div class="md:col-span-5 bg-gradient-to-br from-navy-900 to-navy-950 text-white rounded-3xl p-6 sm:p-7 shadow-xl border border-navy-800">
+            <div class="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">Hesablanmış Təxmini Məbləğ</div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl sm:text-5xl font-black text-white" id="calc-total-price">540</span>
+              <span class="text-xl font-bold text-brand-300">AZN</span>
+            </div>
+            
+            <p class="text-xs text-slate-400 mt-2 pb-4 border-b border-navy-800">
+              *Qiymətə ilkin həkim baxışı və müalicə planının tərtibi daxildir.
+            </p>
+
+            <!-- Taksit Card breakdown -->
+            <div class="mt-4 space-y-2.5">
+              <div class="text-xs font-semibold text-slate-300 flex items-center justify-between">
+                <span>Birkart / Tamkart ilə:</span>
+                <span class="text-emerald-400 font-bold">0% Komissiya</span>
+              </div>
+
+              <div class="bg-navy-800/80 rounded-xl p-3 border border-navy-700/80 flex items-center justify-between">
+                <span class="text-xs text-slate-300">12 Aylıq Taksit:</span>
+                <span class="text-sm font-bold text-white"><span id="calc-installment-12">45</span> AZN / ay</span>
+              </div>
+
+              <div class="bg-navy-800/80 rounded-xl p-3 border border-navy-700/80 flex items-center justify-between">
+                <span class="text-xs text-slate-300">24 Aylıq Taksit:</span>
+                <span class="text-sm font-bold text-white"><span id="calc-installment-24">22.5</span> AZN / ay</span>
+              </div>
+            </div>
+
+            <!-- Booking trigger with pre-filled plan -->
+            <button onclick="bookCalculatedPlan()" class="w-full mt-6 py-3.5 rounded-xl font-bold text-sm text-navy-950 bg-brand-400 hover:bg-brand-300 transition-colors shadow-lg flex items-center justify-center gap-2">
+              <i class="fa-solid fa-clipboard-check"></i>
+              <span>Bu Planla Qəbula Yazıl</span>
+            </button>
+            <p class="text-[11px] text-center text-slate-400 mt-2">Məsləhət və rentgen müayinəsi pulsuzdur</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 7. DOCTORS & SPECIALISTS DIRECTORY ==================== -->
+  <section id="hekimler" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Peşəkar Həkim Komandamız</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 tracking-tight">Təcrübəli Stomatoloq və Cərrahlar</h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">Avropa və Türkiyədə ixtisaslaşmış, minlərlə uğurlu əməliyyat aparmış ekspertlər.</p>
+        </div>
+        
+        <!-- Doctor Filter Tabs -->
+        <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
+          <button onclick="filterDoctors('all')" class="doc-filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-navy-900 text-white" data-doc="all">Hamısı</button>
+          <button onclick="filterDoctors('implant')" class="doc-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200" data-doc="implant">İmplantoloq</button>
+          <button onclick="filterDoctors('ortodont')" class="doc-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200" data-doc="ortodont">Ortodont</button>
+          <button onclick="filterDoctors('estetika')" class="doc-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200" data-doc="estetika">Estetik Həkim</button>
+        </div>
+      </div>
+
+      <!-- Doctor Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="doctors-grid">
+        
+        <!-- Doctor 1 -->
+        <div class="doc-card group bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between" data-doc="implant">
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-square mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. Elmir Məmmədov" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] font-bold text-navy-900 shadow-sm flex items-center gap-1">
+                <i class="fa-solid fa-star text-amber-400"></i> 4.95
+              </span>
+            </div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2 py-0.5 rounded border border-brand-200">Baş Cərrah</span>
+              <span class="text-xs text-slate-400">16 il təcrübə</span>
+            </div>
+            <h3 class="text-base font-bold text-navy-900 group-hover:text-brand-600 transition-colors">Dr. Elmir Məmmədov</h3>
+            <p class="text-xs text-slate-500 font-medium">m.ü.f.d., İmplantoloq-Cərrah</p>
+            <p class="text-[11px] text-slate-400 mt-2">Almaniya və İsveçrə İCOİ assosiasiyasının həqiqi üzvü.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <button onclick="prefillBooking('İmplantologiya', 'Dr. Elmir Məmmədov')" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Qəbula Yazıl</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="doc-card group bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between" data-doc="ortodont">
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-square mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1594824813590-b99f8c65853b?auto=format&fit=crop&w=600&q=80" alt="Dr. Nərmin Əliyeva" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] font-bold text-navy-900 shadow-sm flex items-center gap-1">
+                <i class="fa-solid fa-star text-amber-400"></i> 4.98
+              </span>
+            </div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">Ortodont</span>
+              <span class="text-xs text-slate-400">12 il təcrübə</span>
+            </div>
+            <h3 class="text-base font-bold text-navy-900 group-hover:text-brand-600 transition-colors">Dr. Nərmin Əliyeva</h3>
+            <p class="text-xs text-slate-500 font-medium">Ali dərəcəli Ortodont-Stomatoloq</p>
+            <p class="text-[11px] text-slate-400 mt-2">Invisalign (ABŞ) və Damon breket sistemləri üzrə sertifikatlı mütəxəssis.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <button onclick="prefillBooking('Ortodontiya (Breketlər)', 'Dr. Nərmin Əliyeva')" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Qəbula Yazıl</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="doc-card group bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between" data-doc="estetika">
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-square mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=600&q=80" alt="Dr. Orxan Quliyev" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] font-bold text-navy-900 shadow-sm flex items-center gap-1">
+                <i class="fa-solid fa-star text-amber-400"></i> 4.91
+              </span>
+            </div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Estetik Həkim</span>
+              <span class="text-xs text-slate-400">10 il təcrübə</span>
+            </div>
+            <h3 class="text-base font-bold text-navy-900 group-hover:text-brand-600 transition-colors">Dr. Orxan Quliyev</h3>
+            <p class="text-xs text-slate-500 font-medium">Estetik və Ortoped Stomatoloq</p>
+            <p class="text-[11px] text-slate-400 mt-2">Hollivud gülüşü, E-max keramik vinirlər və mikroskopik restavrasiya.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <button onclick="prefillBooking('Keramik Vinirlər', 'Dr. Orxan Quliyev')" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Qəbula Yazıl</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Doctor 4 -->
+        <div class="doc-card group bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-card hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between" data-doc="terapiya">
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-square mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Dr. Leyla Hüseynova" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-lg text-[11px] font-bold text-navy-900 shadow-sm flex items-center gap-1">
+                <i class="fa-solid fa-star text-amber-400"></i> 4.97
+              </span>
+            </div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Uşaq və Terapiya</span>
+              <span class="text-xs text-slate-400">9 il təcrübə</span>
+            </div>
+            <h3 class="text-base font-bold text-navy-900 group-hover:text-brand-600 transition-colors">Dr. Leyla Hüseynova</h3>
+            <p class="text-xs text-slate-500 font-medium">Pediatrik Stomatoloq & Terapevt</p>
+            <p class="text-[11px] text-slate-400 mt-2">Uşaqların stressiz və ağrısız qəbulu, endodontiya və profilaktika.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100">
+            <button onclick="prefillBooking('Uşaq Stomatologiyası', 'Dr. Leyla Hüseynova')" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-brand-600 text-slate-700 hover:text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span>Qəbula Yazıl</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 8. ACTIVE CAMPAIGNS & OFFERS ==================== -->
+  <section id="kampaniyalar" class="py-20 bg-navy-950 text-white relative overflow-hidden">
+    <!-- Ambient glow -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-brand-400 font-bold text-xs uppercase tracking-widest bg-brand-900/60 px-3 py-1 rounded-full border border-brand-700">Məhdud Müddətli Fürsətlər</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">Xüsusi Mövsüm Kampaniyaları</h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">Sağlam və gözəl gülüşünüz üçün eksklüziv endirimlər və hədiyyə paketləri.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Campaign Card 1 -->
+        <div class="bg-gradient-to-b from-navy-900 to-navy-900/80 rounded-3xl p-6 border border-brand-500/30 relative flex flex-col justify-between shadow-glow">
+          <div class="absolute -top-3 right-6 bg-gradient-to-r from-brand-500 to-brand-600 text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+            Ən Populyar
+          </div>
+          <div>
+            <div class="text-brand-400 text-xs font-bold uppercase tracking-wider mb-2">İmplant Paketi</div>
+            <h3 class="text-xl font-bold text-white leading-tight">İsveçrə İmplantı + 3D KT Hədiyyə</h3>
+            <p class="text-slate-300 text-xs mt-2 leading-relaxed">
+              Straumann implantı qoydurana 3D Kompüter Tomoqrafiya diaqnostikası və ilk təmizləmə tam ödənişsiz hədiyyə olunur.
+            </p>
+            <div class="mt-6 flex items-baseline gap-3">
+              <span class="text-3xl font-extrabold text-white">490 AZN</span>
+              <span class="text-sm text-slate-500 line-through">680 AZN</span>
+            </div>
+          </div>
+          <button onclick="prefillBooking('İsveçrə İmplantı Kampaniyası', '')" class="w-full mt-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-500 transition-colors shadow-md">
+            Kampaniyadan Yararlan
+          </button>
+        </div>
+
+        <!-- Campaign Card 2 -->
+        <div class="bg-gradient-to-b from-navy-900 to-navy-900/80 rounded-3xl p-6 border border-navy-800 relative flex flex-col justify-between">
+          <div>
+            <div class="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">Estetik Təbəssüm</div>
+            <h3 class="text-xl font-bold text-white leading-tight">Hollivud Gülüşü: 8 Vinirə 20% Endirim</h3>
+            <p class="text-slate-300 text-xs mt-2 leading-relaxed">
+              Üst çənənin 8 dişinə E-max keramik vinir sifariş edən hər kəsə Zoom 4 lazer ağartma seansı hədiyyə edilir.
+            </p>
+            <div class="mt-6 flex items-baseline gap-3">
+              <span class="text-3xl font-extrabold text-white">1,760 AZN</span>
+              <span class="text-sm text-slate-500 line-through">2,200 AZN</span>
+            </div>
+          </div>
+          <button onclick="prefillBooking('Hollivud Gülüşü Kampaniyası', '')" class="w-full mt-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-500 transition-colors shadow-md">
+            Kampaniyadan Yararlan
+          </button>
+        </div>
+
+        <!-- Campaign Card 3 -->
+        <div class="bg-gradient-to-b from-navy-900 to-navy-900/80 rounded-3xl p-6 border border-navy-800 relative flex flex-col justify-between">
+          <div>
+            <div class="text-amber-400 text-xs font-bold uppercase tracking-wider mb-2">Ailə & Uşaq</div>
+            <h3 class="text-xl font-bold text-white leading-tight">Uşaq Profilaktika və Gigiyena -50%</h3>
+            <p class="text-slate-300 text-xs mt-2 leading-relaxed">
+              Süd dişlərinin remineralizasiyası, dərin flüorlaşdırma və fissur hermetizasiyası valideynlər üçün yarımqiymətinə.
+            </p>
+            <div class="mt-6 flex items-baseline gap-3">
+              <span class="text-3xl font-extrabold text-white">45 AZN</span>
+              <span class="text-sm text-slate-500 line-through">90 AZN</span>
+            </div>
+          </div>
+          <button onclick="prefillBooking('Uşaq Gigiyena Kampaniyası', '')" class="w-full mt-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-slate-800 hover:bg-slate-700 transition-colors shadow-md">
+            Kampaniyadan Yararlan
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. CLINIC LOCATIONS & INTERACTIVE MAP ==================== -->
+  <section id="klinikalar" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Klinika Şəbəkəmiz</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 tracking-tight">Bakı Şəhərində 4 Müasir Filial</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">Şəhərin mərkəzində rahat parkinq, metroya yaxınlıq və ən son sterilizasiya avadanlıqları ilə təchiz olunmuş klinikalarımız.</p>
+      </div>
+
+      <!-- Branch Selection & Details -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Branch Cards (Left 5 cols) -->
+        <div class="lg:col-span-5 space-y-3">
+          
+          <div onclick="switchBranch('nasimi')" id="branch-card-nasimi" class="branch-card active p-4 rounded-2xl bg-white border-2 border-brand-600 shadow-sm cursor-pointer transition">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-sm text-navy-900">Mərkəzi Filial (Nəsimi)</h4>
+              <span class="text-[10px] font-bold text-brand-600 bg-brand-50 px-2 py-0.5 rounded border border-brand-200">Baş Ofis</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i>Səməd Vurğun küç. 88 (Zabitlər parkı yanı)</p>
+            <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-3">
+              <span><i class="fa-regular fa-clock mr-1"></i>09:00 - 21:00</span>
+              <span><i class="fa-solid fa-phone mr-1"></i>(012) 555-03-03</span>
+            </div>
+          </div>
+
+          <div onclick="switchBranch('genclik')" id="branch-card-genclik" class="branch-card p-4 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm cursor-pointer transition">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-sm text-navy-900">Gənclik VIP Mərkəzi</h4>
+              <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-200">VIP Estetika</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i>Atatürk prospekti 45 (Gənclik m/s yaxınlığı)</p>
+            <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-3">
+              <span><i class="fa-regular fa-clock mr-1"></i>09:00 - 21:00</span>
+              <span><i class="fa-solid fa-phone mr-1"></i>(012) 555-03-04</span>
+            </div>
+          </div>
+
+          <div onclick="switchBranch('yasamal')" id="branch-card-yasamal" class="branch-card p-4 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm cursor-pointer transition">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-sm text-navy-900">Yasamal Filialı</h4>
+              <span class="text-[10px] font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">Ailəvi Stomatologiya</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i>Həsən bəy Zərdabi pr. 72 (İnşaatçılar m/s)</p>
+            <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-3">
+              <span><i class="fa-regular fa-clock mr-1"></i>09:00 - 21:00</span>
+              <span><i class="fa-solid fa-phone mr-1"></i>(012) 555-03-05</span>
+            </div>
+          </div>
+
+          <div onclick="switchBranch('xetai')" id="branch-card-xetai" class="branch-card p-4 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 shadow-sm cursor-pointer transition">
+            <div class="flex items-center justify-between">
+              <h4 class="font-bold text-sm text-navy-900">Xətai Filialı</h4>
+              <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">24/7 Növbətçi</span>
+            </div>
+            <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot text-brand-500 mr-1.5"></i>Xocalı prospekti 24 (Xətai m/s)</p>
+            <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-3">
+              <span><i class="fa-regular fa-clock mr-1"></i>24/7 Təcili Xidmət</span>
+              <span><i class="fa-solid fa-phone mr-1"></i>(012) 555-03-06</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Map & Branch Showcase Card (Right 7 cols) -->
+        <div class="lg:col-span-7 bg-white rounded-3xl p-6 border border-slate-200 shadow-card">
+          <div class="relative rounded-2xl overflow-hidden aspect-[16/9] mb-5 bg-slate-100">
+            <!-- Simulated High-tech Map UI -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12154.673891782299!2d49.835!3d40.385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d9b90847427%3A0x7d6dd6488d75e076!2sBaku%2C%20Azerbaijan!5e0!3m2!1sen!2saz!4v1680000000000!5m2!1sen!2saz" 
+              class="w-full h-full border-0" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            
+            <div class="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-md border border-slate-200 text-xs font-bold text-navy-900 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span id="map-active-branch-title">Mərkəzi Filial (Nəsimi)</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h3 class="text-base font-bold text-navy-900" id="branch-detail-title">Mərkəzi Stomatoloji Klinika</h3>
+              <p class="text-xs text-slate-500 mt-0.5" id="branch-detail-address">Bakı şəhəri, Nəsimi rayonu, Səməd Vurğun küçəsi 88</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <a href="https://maps.google.com" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition">
+                <i class="fa-solid fa-diamond-turn-right mr-1 text-brand-600"></i>Marşrut Aç
+              </a>
+              <button onclick="prefillBooking('Mərkəzi Filial Qəbulu', '')" class="px-4 py-2 rounded-xl text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 transition shadow">
+                Bu Filiala Yazıl
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 10. PATIENT TESTIMONIALS & REVIEWS ==================== -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Pasient Rəyləri</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 tracking-tight">Bizi Seçən Minlərlə İnsanın Gülüşü</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">Klinikamızda müalicə alan pasientlərimizin səmimi fikirləri və təcrübələri.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Review 1 -->
+        <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic">
+              "İllərdir diş həkimindən qorxum var idi. Dr. Elmir müəllim cəmi 20 dəqiqəyə heç bir ağrı hiss etdirmədən 2 ədəd implant yerləşdirdi. Artıq 6 aydır öz dişlərimdən heç fərqlənmir. Çox təşəkkür edirəm!"
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-3 pt-4 border-t border-slate-200/80">
+            <div class="w-10 h-10 rounded-full bg-brand-200 text-brand-800 font-bold flex items-center justify-center text-sm">
+              Rİ
+            </div>
+            <div>
+              <div class="text-xs font-bold text-navy-900">Rəşad İsmayılov</div>
+              <div class="text-[11px] text-slate-500">İmplant Müalicəsi • Təsdiqlənmiş Pasient</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic">
+              "Gənclik filialında Dr. Nərmin xanımın nəzarəti ilə şəffaf kapalar taxdım. Heç kim dişlərimdə aparat olduğunu hiss etmədi və 10 aya tam istədiyim düzülüşü əldə etdik. Klinikanın servisi möhtəşəmdir."
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-3 pt-4 border-t border-slate-200/80">
+            <div class="w-10 h-10 rounded-full bg-indigo-200 text-indigo-800 font-bold flex items-center justify-center text-sm">
+              GƏ
+            </div>
+            <div>
+              <div class="text-xs font-bold text-navy-900">Günel Əliyeva</div>
+              <div class="text-[11px] text-slate-500">Ortodontiya • Təsdiqlənmiş Pasient</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic">
+              "Toyum ərəfəsində 8 ədəd E-max vinir etdirdim. Təbii ağlıq və parıltı tam xəyal etdiyim kimi oldu. Həkimlər çox diqqətcil və peşəkardır. Qiymət kalkulyatorunda nə hesablamışdımsa, eynisi çıxdı."
+            </p>
+          </div>
+          <div class="mt-6 flex items-center gap-3 pt-4 border-t border-slate-200/80">
+            <div class="w-10 h-10 rounded-full bg-emerald-200 text-emerald-800 font-bold flex items-center justify-center text-sm">
+              FS
+            </div>
+            <div>
+              <div class="text-xs font-bold text-navy-900">Fərid Sadıqov</div>
+              <div class="text-[11px] text-slate-500">Keramik Vinir • Təsdiqlənmiş Pasient</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 11. DENTAL BLOG & ARTICLES ==================== -->
+  <section class="py-20 bg-slate-50/70 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Stomatoloq Maarifləndirir</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3 tracking-tight">Faydalı Məqalələr və Məsləhətlər</h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">Ağız boşluğunun sağlamlığı və müasir müalicə üsulları haqqında həkimlərimizin tövsiyələri.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Article 1 -->
+        <article class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-card transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" alt="İmplant haqqında" class="w-full h-full object-cover">
+            </div>
+            <div class="text-[11px] font-bold text-brand-600 mb-1">Mütəxəssis Məsləhəti • 4 dəq oxu</div>
+            <h3 class="text-base font-bold text-navy-900 hover:text-brand-600 transition">İmplant qoydurarkən nələrə diqqət yetirilməlidir?</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Titanyum və zirkon implantların fərqləri, çənə sümüyünün sıxlığı və əməliyyatdan sonrakı ilk 48 saatın qızıl qaydaları.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400">Müəllif: Dr. Elmir Məmmədov</span>
+            <span class="text-brand-600 font-bold">Ətraflı <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-card transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" alt="Vinir yoxsa Zirkon" class="w-full h-full object-cover">
+            </div>
+            <div class="text-[11px] font-bold text-emerald-600 mb-1">Estetik Bələdçi • 5 dəq oxu</div>
+            <h3 class="text-base font-bold text-navy-900 hover:text-brand-600 transition">Keramik Vinir, yoxsa Zirkon Qapaq?</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              Diş toxumasının minimal yonulması baxımından E-max vinirlərin üstünlükləri və hər iki metodun tətbiq sahələri.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400">Müəllif: Dr. Orxan Quliyev</span>
+            <span class="text-brand-600 font-bold">Ətraflı <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="bg-white rounded-3xl p-5 border border-slate-200 shadow-sm hover:shadow-card transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/10] mb-4 bg-slate-100">
+              <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" alt="Breketlər haqqında" class="w-full h-full object-cover">
+            </div>
+            <div class="text-[11px] font-bold text-indigo-600 mb-1">Ortodontiya • 3 dəq oxu</div>
+            <h3 class="text-base font-bold text-navy-900 hover:text-brand-600 transition">Uşaqlarda diş əyriliklərinin erkən profilaktikası</h3>
+            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+              7 yaşdan etibarən ortodont müayinəsinin əhəmiyyəti və çənə darlığının kapalar vasitəsilə cərrahiyyəsiz korreksiyası.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-400">Müəllif: Dr. Nərmin Əliyeva</span>
+            <span class="text-brand-600 font-bold">Ətraflı <i class="fa-solid fa-arrow-right text-[10px]"></i></span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 12. FAQ ACCORDION ==================== -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">Suallar və Cavablar</span>
+        <h2 class="text-3xl font-extrabold text-navy-900 mt-3 tracking-tight">Tez-tez Verilən Suallar</h2>
+      </div>
+
+      <div class="space-y-3" id="faq-accordion">
+        
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
+          <button onclick="toggleFaq(1)" class="w-full text-left p-4 sm:p-5 font-bold text-sm sm:text-base text-navy-900 flex items-center justify-between gap-4">
+            <span>İmplant qoyulması proseduru nə dərəcədə ağrılıdır?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200" id="faq-icon-1"></i>
+          </button>
+          <div class="hidden p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white" id="faq-content-1">
+            İmplant əməliyyatı yerli kompüter anesteziyası altında aparılır və prosedur zamanı pasient qətiyyən ağrı hiss etmir. Hətta adi diş çəkimindən daha az narahatlıq yaradır. Əməliyyatdan sonra həkim tərəfindən təyin olunan standart ağrıkəsici tabletlər tam kifayət edir.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
+          <button onclick="toggleFaq(2)" class="w-full text-left p-4 sm:p-5 font-bold text-sm sm:text-base text-navy-900 flex items-center justify-between gap-4">
+            <span>İlk konsultasiya və müayinə üçün ödəniş varmı?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200" id="faq-icon-2"></i>
+          </button>
+          <div class="hidden p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white" id="faq-content-2">
+            Xeyr, Stomatoloq.az şəbəkəsində ilk həkim baxışı, ağız boşluğunun video-kamera ilə müayinəsi və fərdi müalicə planının tərtibi tamamilə pulsuzdur.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
+          <button onclick="toggleFaq(3)" class="w-full text-left p-4 sm:p-5 font-bold text-sm sm:text-base text-navy-900 flex items-center justify-between gap-4">
+            <span>Ödənişi hissə-hissə (taksit kartları ilə) etmək mümkündürmü?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200" id="faq-icon-3"></i>
+          </button>
+          <div class="hidden p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white" id="faq-content-3">
+            Bəli, klinika şəbəkəmizdə Birkart, Tamkart, Bolkart və Albalı kartları vasitəsilə 3, 6, 12 və 24 aylıq faizsiz (0% komissiya ilə) taksit imkanı mövcuddur.
+          </div>
+        </div>
+
+        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
+          <button onclick="toggleFaq(4)" class="w-full text-left p-4 sm:p-5 font-bold text-sm sm:text-base text-navy-900 flex items-center justify-between gap-4">
+            <span>Təcili hallarda (gecə vaxtı) müraciət edə bilərəmmi?</span>
+            <i class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform duration-200" id="faq-icon-4"></i>
+          </button>
+          <div class="hidden p-4 sm:p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white" id="faq-content-4">
+            Bəli, Xətai filialımız və Təcili Yardım xidmətimiz (*0303) həftənin 7 günü 24 saat fasiləsiz növbətçi həkim heyəti ilə fəaliyyət göstərir. Kəskin diş ağrısı, zədələnmə və ya qanaxma hallarında dərhal müraciət edə bilərsiniz.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 13. FOOTER ==================== -->
+  <footer id="elaqe" class="bg-navy-950 text-slate-400 text-xs pt-16 pb-12 border-t border-navy-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-navy-900">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-2xl bg-brand-600 flex items-center justify-center text-white shadow-md">
+              <i class="fa-solid fa-tooth text-xl"></i>
+            </div>
+            <div>
+              <span class="text-xl font-black text-white tracking-tight">Stomatoloq<span class="text-brand-400">.az</span></span>
+              <p class="text-[10px] text-slate-400">Azərbaycan Stomatoloji Klinikalar Şəbəkəsi</p>
+            </div>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+            Azərbaycan Respublikası Səhiyyə Nazirliyi tərəfindən lisenziyalaşdırılmış (Lisenziya № 094821), beynəlxalq ISO 9001 sertifikatına malik qabaqcıl stomatoloji mərkəz.
+          </p>
+          <div class="flex items-center gap-3 text-slate-400 pt-2">
+            <a href="https://instagram.com" class="w-8 h-8 rounded-lg bg-navy-900 hover:bg-brand-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" class="w-8 h-8 rounded-lg bg-navy-900 hover:bg-brand-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/994502220303" class="w-8 h-8 rounded-lg bg-navy-900 hover:bg-emerald-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://youtube.com" class="w-8 h-8 rounded-lg bg-navy-900 hover:bg-red-600 hover:text-white flex items-center justify-center transition"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Xidmətlərimiz</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#xidmetler" class="hover:text-white transition">İmplantologiya</a></li>
+            <li><a href="#xidmetler" class="hover:text-white transition">Ortodontiya & Breketlər</a></li>
+            <li><a href="#xidmetler" class="hover:text-white transition">Keramik Vinirlər</a></li>
+            <li><a href="#xidmetler" class="hover:text-white transition">Zoom 4 Ağartma</a></li>
+            <li><a href="#xidmetler" class="hover:text-white transition">Uşaq Stomatologiyası</a></li>
+            <li><a href="#xidmetler" class="hover:text-white transition">3D KT Kompüter Diaqnostika</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Filiallar -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">Filiallarımız</h4>
+          <ul class="space-y-2 text-xs">
+            <li><span class="text-white font-medium">Nəsimi:</span> S. Vurğun 88</li>
+            <li><span class="text-white font-medium">Gənclik:</span> Atatürk pr. 45</li>
+            <li><span class="text-white font-medium">Yasamal:</span> H. Zərdabi 72</li>
+            <li><span class="text-white font-medium">Xətai (24/7):</span> Xocalı pr. 24</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Təcili Əlaqə & Qəbul -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider">24/7 Əlaqə</h4>
+          <div class="space-y-2 text-xs">
+            <p><a href="tel:*0303" class="text-brand-400 font-bold hover:underline">*0303 (Qısa nömrə)</a></p>
+            <p><a href="tel:+994125550303" class="hover:text-white transition">+994 (12) 555-03-03</a></p>
+            <p><a href="https://wa.me/994502220303" class="text-emerald-400 hover:underline">+994 (50) 222-03-03 (WhatsApp)</a></p>
+            <p class="text-slate-500">info@stomatoloq.az</p>
+          </div>
+          <button onclick="openBookingModal()" class="w-full mt-2 py-2 px-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition shadow">
+            Onlayn Qəbula Yazıl
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Disclaimers -->
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <p>© 2026 Stomatoloq.az. Bütün hüquqlar qorunur. AR Səhiyyə Nazirliyi Lisenziya № 094821.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-slate-400 transition">Məxfilik Siyasəti</a>
+          <span>•</span>
+          <a href="#" class="hover:text-slate-400 transition">İstifadə Şərtləri</a>
+          <span>•</span>
+          <a href="#" class="hover:text-slate-400 transition">Pasient Hüquqları</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== 14. INTERACTIVE BOOKING MODAL & DRAWER ==================== -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden transition-opacity duration-300">
+    <!-- Backdrop Blur -->
+    <div class="fixed inset-0 bg-navy-950/70 backdrop-blur-sm transition-opacity" onclick="closeBookingModal()"></div>
+
+    <!-- Modal Content Box -->
+    <div class="fixed inset-0 z-10 overflow-y-auto flex items-center justify-center p-4 sm:p-6">
+      <div class="relative bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 transform transition-all duration-300 scale-95 opacity-0" id="booking-modal-card">
+        
+        <!-- Close button -->
+        <button onclick="closeBookingModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-navy-900 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+
+        <div id="booking-form-view">
+          <div class="flex items-center gap-2.5 mb-2">
+            <div class="w-8 h-8 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center text-sm font-bold">
+              <i class="fa-regular fa-calendar-check"></i>
+            </div>
+            <h3 class="text-xl font-extrabold text-navy-900">Onlayn Həkim Qəbulu</h3>
+          </div>
+          <p class="text-xs text-slate-500 mb-6">Məlumatlarınızı daxil edin. Qəbul təsdiqi birbaşa WhatsApp nömrənizə göndəriləcək.</p>
+
+          <form id="appointment-form" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Adınız *</label>
+                <input type="text" id="patient-name" required placeholder="Məs: Fərid" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Soyadınız *</label>
+                <input type="text" id="patient-surname" required placeholder="Məs: Əliyev" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Telefon Nömrəniz (WhatsApp) *</label>
+              <div class="relative">
+                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">+994</span>
+                <input type="tel" id="patient-phone" required placeholder="50 123 45 67" class="w-full pl-14 pr-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Xidmət Növü</label>
+                <select id="modal-service-select" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50">
+                  <option value="İmplantologiya">İmplantologiya</option>
+                  <option value="Ortodontiya (Breketlər)">Ortodontiya (Breketlər)</option>
+                  <option value="Keramik Vinirlər">Keramik Vinirlər & Zirkon</option>
+                  <option value="Diş Ağardılması (Zoom 4)">Zoom 4 Diş Ağardılması</option>
+                  <option value="Terapiya / Karies">Terapiya / Karies</option>
+                  <option value="Uşaq Stomatologiyası">Uşaq Stomatologiyası</option>
+                  <option value="Cərrahiyyə və 3D KT">Cərrahiyyə & 3D KT</option>
+                  <option value="Ümumi Konsultasiya (Pulsuz)">Ümumi Konsultasiya (Pulsuz)</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Filial Seçimi</label>
+                <select id="modal-branch-select" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50">
+                  <option value="Mərkəzi Filial (Nəsimi)">Mərkəzi Filial (Nəsimi)</option>
+                  <option value="Gənclik VIP Mərkəzi">Gənclik VIP Mərkəzi</option>
+                  <option value="Yasamal Filialı">Yasamal Filialı</option>
+                  <option value="Xətai Filialı (24/7)">Xətai Filialı (24/7)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Seçilən Həkim (Könüllü)</label>
+                <input type="text" id="modal-doctor-input" placeholder="İstənilən növbətçi həkim" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Tarix</label>
+                <input type="date" id="modal-date-input" class="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Qeyd və ya Şikayətiniz</label>
+              <textarea id="patient-notes" rows="2" placeholder="Diş ağrısı, estetik arzu və ya əvvəlki müalicə haqqında qeyd..." class="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 bg-slate-50/50"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-500/25 transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-check"></i>
+              <span>Qəbulu Təsdiqləyin</span>
+            </button>
+            <p class="text-[11px] text-center text-slate-400">İlkin baxış və müalicə planının hazırlanması pulsuzdur.</p>
+
+          </form>
+        </div>
+
+        <!-- Success Confirmation View (Hidden by default) -->
+        <div id="booking-success-view" class="hidden text-center py-4 space-y-4">
+          <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center text-2xl font-bold">
+            <i class="fa-solid fa-circle-check"></i>
+          </div>
+          <h3 class="text-xl font-black text-navy-900">Müraciətiniz Qəbul Olundu!</h3>
+          <p class="text-xs text-slate-600 leading-relaxed max-w-sm mx-auto">
+            Hörmətli <span id="success-patient-name" class="font-bold text-navy-900"></span>, qəbul sorğunuz qeydə alındı. Qeydiyyat nömrəniz: <span id="success-booking-id" class="font-bold text-brand-600"></span>.
+          </p>
+
+          <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5 max-w-sm mx-auto">
+            <div><span class="text-slate-500">Xidmət:</span> <span class="font-semibold text-navy-900" id="success-service"></span></div>
+            <div><span class="text-slate-500">Filial:</span> <span class="font-semibold text-navy-900" id="success-branch"></span></div>
+            <div><span class="text-slate-500">Tarix:</span> <span class="font-semibold text-navy-900" id="success-date"></span></div>
+          </div>
+
+          <div class="pt-2 space-y-2">
+            <a id="whatsapp-direct-link" href="#" target="_blank" rel="noreferrer" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-500 transition-colors shadow-md flex items-center justify-center gap-2">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+              <span>WhatsApp ilə Qəbulu Təsdiqlə</span>
+            </a>
+            <button onclick="closeBookingModal()" class="w-full py-2.5 rounded-xl text-xs font-semibold text-slate-500 hover:text-navy-900">
+              Pəncərəni Bağla
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 15. FLOATING QUICK ACTION BUTTONS ==================== -->
+  <div class="fixed bottom-5 right-5 z-40 flex flex-col gap-2.5">
+    <a href="https://wa.me/994502220303?text=Salam,%20stomatoloq.az%20saytından%20yazıram." target="_blank" rel="noreferrer" class="w-13 h-13 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 hover:scale-110 transition-transform duration-200" title="WhatsApp Konsultasiya">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+    <a href="tel:*0303" class="w-13 h-13 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white flex items-center justify-center shadow-lg shadow-brand-500/30 hover:scale-110 transition-transform duration-200" title="Təcili Zəng *0303">
+      <i class="fa-solid fa-phone-volume text-xl"></i>
+    </a>
+  </div>
+
+  <!-- ==================== 16. VANILLA JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // Set default dates
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date().toISOString().split('T')[0];
+      const quickDate = document.getElementById('quick-date');
+      const modalDate = document.getElementById('modal-date-input');
+      if (quickDate) quickDate.value = today;
+      if (modalDate) modalDate.value = today;
+
+      initBeforeAfterSlider();
+      recalculateTotal();
+    });
+
+    // Mobile Menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.classList.replace('fa-bars', 'fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.replace('fa-xmark', 'fa-bars');
+      }
+    }
+
+    // Modal Drawer logic
+    function openBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      const card = document.getElementById('booking-modal-card');
+      const formView = document.getElementById('booking-form-view');
+      const successView = document.getElementById('booking-success-view');
+
+      formView.classList.remove('hidden');
+      successView.classList.add('hidden');
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        card.classList.remove('scale-95', 'opacity-0');
+        card.classList.add('scale-100', 'opacity-100');
+      }, 20);
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      const card = document.getElementById('booking-modal-card');
+      card.classList.remove('scale-100', 'opacity-100');
+      card.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 200);
+    }
+
+    function prefillBooking(serviceName, doctorName) {
+      openBookingModal();
+      if (serviceName) {
+        const select = document.getElementById('modal-service-select');
+        let found = false;
+        for (let opt of select.options) {
+          if (opt.value.toLowerCase().includes(serviceName.toLowerCase()) || serviceName.toLowerCase().includes(opt.value.toLowerCase())) {
+            select.value = opt.value;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          const opt = new Option(serviceName, serviceName, true, true);
+          select.add(opt);
+        }
+      }
+      if (doctorName) {
+        const docInput = document.getElementById('modal-doctor-input');
+        if (docInput) docInput.value = doctorName;
+      }
+    }
+
+    function handleHeroQuickSubmit(e) {
+      e.preventDefault();
+      const service = document.getElementById('quick-service').value;
+      const branch = document.getElementById('quick-branch').value;
+      const date = document.getElementById('quick-date').value;
+
+      openBookingModal();
+
+      const modalBranch = document.getElementById('modal-branch-select');
+      if (branch === 'nasimi') modalBranch.value = 'Mərkəzi Filial (Nəsimi)';
+      else if (branch === 'genclik') modalBranch.value = 'Gənclik VIP Mərkəzi';
+      else if (branch === 'yasamal') modalBranch.value = 'Yasamal Filialı';
+      else if (branch === 'xetai') modalBranch.value = 'Xətai Filialı (24/7)';
+
+      const modalDate = document.getElementById('modal-date-input');
+      if (date) modalDate.value = date;
+    }
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('patient-name').value;
+      const surname = document.getElementById('patient-surname').value;
+      const phone = document.getElementById('patient-phone').value;
+      const service = document.getElementById('modal-service-select').value;
+      const branch = document.getElementById('modal-branch-select').value;
+      const doctor = document.getElementById('modal-doctor-input').value || 'Növbətçi Stomatoloq';
+      const date = document.getElementById('modal-date-input').value;
+      const notes = document.getElementById('patient-notes').value;
+
+      const bookingId = 'ST-' + Math.floor(100000 + Math.random() * 900000);
+
+      document.getElementById('success-patient-name').textContent = name + ' ' + surname;
+      document.getElementById('success-booking-id').textContent = bookingId;
+      document.getElementById('success-service').textContent = service;
+      document.getElementById('success-branch').textContent = branch;
+      document.getElementById('success-date').textContent = date;
+
+      // WhatsApp link preparation
+      const waText = encodeURIComponent(
+        `Salam, Stomatoloq.az saytından həkim qəbulu sifarişi:\n\n` +
+        `Kod: ${bookingId}\n` +
+        `Pasient: ${name} ${surname}\n` +
+        `Əlaqə: +994 ${phone}\n` +
+        `Xidmət: ${service}\n` +
+        `Həkim: ${doctor}\n` +
+        `Filial: ${branch}\n` +
+        `Tarix: ${date}\n` +
+        (notes ? `Qeyd: ${notes}` : '')
+      );
+      document.getElementById('whatsapp-direct-link').href = `https://wa.me/994502220303?text=${waText}`;
+
+      document.getElementById('booking-form-view').classList.add('hidden');
+      document.getElementById('booking-success-view').classList.remove('hidden');
+    }
+
+    // ==================== BEFORE / AFTER SLIDER LOGIC ====================
+    let isDraggingBA = false;
+
+    function initBeforeAfterSlider() {
+      const container = document.getElementById('ba-container');
+      const resize = document.getElementById('ba-resize');
+      const handle = document.getElementById('ba-handle');
+
+      function setSliderPosition(x) {
+        const rect = container.getBoundingClientRect();
+        let posX = x - rect.left;
+        if (posX < 0) posX = 0;
+        if (posX > rect.width) posX = rect.width;
+        const percentage = (posX / rect.width) * 100;
+        resize.style.width = percentage + '%';
+        handle.style.left = percentage + '%';
+      }
+
+      container.addEventListener('mousedown', (e) => {
+        isDraggingBA = true;
+        setSliderPosition(e.clientX);
+      });
+      window.addEventListener('mouseup', () => { isDraggingBA = false; });
+      window.addEventListener('mousemove', (e) => {
+        if (!isDraggingBA) return;
+        setSliderPosition(e.clientX);
+      });
+
+      // Touch support for mobile
+      container.addEventListener('touchstart', (e) => {
+        isDraggingBA = true;
+        setSliderPosition(e.touches[0].clientX);
+      }, { passive: true });
+      window.addEventListener('touchend', () => { isDraggingBA = false; });
+      window.addEventListener('touchmove', (e) => {
+        if (!isDraggingBA) return;
+        setSliderPosition(e.touches[0].clientX);
+      }, { passive: true });
+    }
+
+    const transformationCases = {
+      1: {
+        title: "E-Max Keramik Vinirlər",
+        before: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=80",
+        after: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80",
+      },
+      2: {
+        title: "Damon Breket Sistemi",
+        before: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=1200&q=80",
+        after: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+      },
+      3: {
+        title: "Ön Diş İmplantı",
+        before: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+        after: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
+      }
+    };
+
+    function switchTransformationCase(caseId) {
+      document.querySelectorAll('.case-btn').forEach((btn, idx) => {
+        btn.classList.remove('border-brand-600', 'bg-brand-50/60');
+        btn.classList.add('border-slate-200', 'bg-white');
+        const badge = btn.querySelector('span');
+        if (badge) {
+          badge.textContent = 'Bax';
+          badge.className = 'text-xs font-medium text-slate-400';
+        }
+      });
+
+      const activeBtn = document.getElementById('case-btn-' + caseId);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-slate-200', 'bg-white');
+        activeBtn.classList.add('border-brand-600', 'bg-brand-50/60');
+        const badge = activeBtn.querySelector('span');
+        if (badge) {
+          badge.textContent = 'Aktiv';
+          badge.className = 'text-xs font-bold text-brand-600 bg-white px-2.5 py-1 rounded-lg border border-brand-200';
+        }
+      }
+
+      const c = transformationCases[caseId];
+      if (c) {
+        document.getElementById('ba-img-before').src = c.before;
+        document.getElementById('ba-img-after').src = c.after;
+        // Reset slider to center
+        document.getElementById('ba-resize').style.width = '50%';
+        document.getElementById('ba-handle').style.left = '50%';
+      }
+    }
+
+    // ==================== INTERACTIVE CALCULATOR ====================
+    let calcState = {
+      basePrice: 490,
+      treatmentName: 'İmplant (Bərpa)',
+      quantity: 1,
+    };
+
+    function selectCalcTreatment(type, basePrice) {
+      calcState.basePrice = basePrice;
+      if (type === 'implant') calcState.treatmentName = 'İmplant (Bərpa)';
+      else if (type === 'vinir') calcState.treatmentName = 'E-max Keramik Vinir';
+      else if (type === 'breket') calcState.treatmentName = 'Keramik Breket';
+      else if (type === 'agartma') calcState.treatmentName = 'Zoom 4 Diş Ağardılması';
+
+      document.querySelectorAll('.calc-type-btn').forEach(btn => {
+        btn.classList.remove('border-2', 'border-brand-600', 'bg-brand-50/50');
+        btn.classList.add('border', 'border-slate-200', 'bg-white');
+      });
+
+      const activeBtn = document.querySelector(`.calc-type-btn[data-type="${type}"]`);
+      if (activeBtn) {
+        activeBtn.classList.remove('border', 'border-slate-200', 'bg-white');
+        activeBtn.classList.add('border-2', 'border-brand-600', 'bg-brand-50/50');
+      }
+
+      recalculateTotal();
+    }
+
+    function updateCalcQuantity(val) {
+      calcState.quantity = parseInt(val);
+      document.getElementById('calc-count-display').textContent = val + ' Ədəd';
+      recalculateTotal();
+    }
+
+    function recalculateTotal() {
+      let total = calcState.basePrice * calcState.quantity;
+      if (document.getElementById('addon-tomography').checked) total += 40;
+      if (document.getElementById('addon-cleaning').checked) total += 50;
+
+      document.getElementById('calc-total-price').textContent = total.toLocaleString('az-AZ');
+      document.getElementById('calc-installment-12').textContent = Math.round(total / 12).toLocaleString('az-AZ');
+      document.getElementById('calc-installment-24').textContent = (total / 24).toFixed(1);
+    }
+
+    function bookCalculatedPlan() {
+      const planName = `${calcState.treatmentName} (${calcState.quantity} ədəd) - Təxmini: ${document.getElementById('calc-total-price').textContent} AZN`;
+      prefillBooking(planName, '');
+    }
+
+    // ==================== SERVICES FILTER ====================
+    function filterServices(category) {
+      document.querySelectorAll('.service-pill-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white');
+        btn.classList.add('bg-white', 'text-slate-600');
+      });
+      const activeBtn = document.querySelector(`.service-pill-btn[data-category="${category}"]`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-white', 'text-slate-600');
+        activeBtn.classList.add('bg-brand-600', 'text-white');
+      }
+
+      document.querySelectorAll('.service-card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // ==================== DOCTORS FILTER ====================
+    function filterDoctors(spec) {
+      document.querySelectorAll('.doc-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-navy-900', 'text-white');
+        btn.classList.add('bg-slate-100', 'text-slate-600');
+      });
+      const activeBtn = document.querySelector(`.doc-filter-btn[data-doc="${spec}"]`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
+        activeBtn.classList.add('bg-navy-900', 'text-white');
+      }
+
+      document.querySelectorAll('.doc-card').forEach(card => {
+        if (spec === 'all' || card.getAttribute('data-doc') === spec) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // ==================== BRANCH SWITCHER ====================
+    const branchData = {
+      nasimi: {
+        title: "Mərkəzi Stomatoloji Klinika",
+        badge: "Mərkəzi Filial (Nəsimi)",
+        address: "Bakı şəhəri, Nəsimi rayonu, Səməd Vurğun küçəsi 88",
+        phone: "(012) 555-03-03"
+      },
+      genclik: {
+        title: "Gənclik VIP Estetik Mərkəzi",
+        badge: "Gənclik VIP Mərkəzi",
+        address: "Bakı şəhəri, Nərimanov rayonu, Atatürk prospekti 45",
+        phone: "(012) 555-03-04"
+      },
+      yasamal: {
+        title: "Yasamal Ailəvi Stomatologiya",
+        badge: "Yasamal Filialı",
+        address: "Bakı şəhəri, Yasamal rayonu, Həsən bəy Zərdabi pr. 72",
+        phone: "(012) 555-03-05"
+      },
+      xetai: {
+        title: "Xətai 24/7 Təcili Stomatologiya",
+        badge: "Xətai Filialı (24/7 Növbətçi)",
+        address: "Bakı şəhəri, Xətai rayonu, Xocalı prospekti 24",
+        phone: "(012) 555-03-06"
+      }
+    };
+
+    function switchBranch(branchKey) {
+      document.querySelectorAll('.branch-card').forEach(c => {
+        c.classList.remove('border-2', 'border-brand-600');
+        c.classList.add('border', 'border-slate-200');
+      });
+      const activeCard = document.getElementById('branch-card-' + branchKey);
+      if (activeCard) {
+        activeCard.classList.remove('border', 'border-slate-200');
+        activeCard.classList.add('border-2', 'border-brand-600');
+      }
+
+      const b = branchData[branchKey];
+      if (b) {
+        document.getElementById('branch-detail-title').textContent = b.title;
+        document.getElementById('branch-detail-address').textContent = b.address;
+        document.getElementById('map-active-branch-title').textContent = b.badge;
+      }
+    }
+
+    // ==================== FAQ ACCORDION ====================
+    function toggleFaq(id) {
+      const content = document.getElementById('faq-content-' + id);
+      const icon = document.getElementById('faq-icon-' + id);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // ==================== LANGUAGE SWITCHER ====================
+    function changeLanguage(lang) {
+      ['az', 'ru', 'en'].forEach(l => {
+        const btn = document.getElementById('lang-' + l);
+        if (l === lang.toLowerCase()) {
+          btn.className = 'px-2 py-0.5 text-[11px] font-bold rounded text-white bg-brand-600 transition';
+        } else {
+          btn.className = 'px-2 py-0.5 text-[11px] font-medium text-slate-400 hover:text-white transition';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Stomatoloq.az - Müasir Stomatoloji Portal və Klinika Şəbəkəsi",
+  "description": "Azərbaycanın qabaqcıl stomatoloji portalı və klinika şəbəkəsi. İmplantologiya, ortodontiya, estetik stomatologiya, onlayn qəbul və interaktiv qiymət kalkulyatoru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
